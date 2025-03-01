@@ -1,0 +1,3 @@
+/home/soumyadip/github/GraphicsEngine/build/CMakeFiles/main.dir
+/home/soumyadip/github/GraphicsEngine/build/CMakeFiles/edit_cache.dir
+/home/soumyadip/github/GraphicsEngine/build/CMakeFiles/rebuild_cache.dir
