@@ -5,7 +5,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <string>
 
-sf::Color hexToColor(std::string color)
+sf::Color hexToColor(const std::string &color)
 {
     int R = std::stoi(color.substr(1, 2), nullptr, 16);
     int G = std::stoi(color.substr(3, 2), nullptr, 16);
@@ -14,17 +14,19 @@ sf::Color hexToColor(std::string color)
     return sf::Color(R, G, B);
 }
 
-void point(sf::RenderWindow& window, sf::Vector2f position, sf::Color color)
+void point(sf::RenderWindow &window, const sf::Vector2f &position,
+           const sf::Color &color)
 {
     // Defining the point
     sf::VertexArray point(sf::PrimitiveType::Points, 1);
     point[0].position = position;
-    point[0].color    = color;
+    point[0].color = color;
 
     window.draw(point);
 }
 
-void line(sf::RenderWindow& window, sf::Vector2f start, sf::Vector2f end, sf::Color color)
+void line(sf::RenderWindow &window, const sf::Vector2f &start,
+          const sf::Vector2f &end, const sf::Color &color)
 {
     // Defining the line
     sf::VertexArray line(sf::PrimitiveType::Lines, 2);
@@ -56,7 +58,8 @@ int main()
         // Clearing window
         window.clear();
 
-        line(window, sf::Vector2f(100, 100), sf::Vector2f(700, 500), sf::Color::Red);
+        line(window, sf::Vector2f(100, 100), sf::Vector2f(700, 500),
+             sf::Color::Red);
         point(window, sf::Vector2f(500, 500), sf::Color::Green);
 
         window.display();
